@@ -303,6 +303,8 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 	/** @var int */
 	protected $randomClientId;
 	/** @var string */
+	protected $deviceId;
+	/** @var string */
 	protected $xuid = "";
 
 	/** @var int */
@@ -433,6 +435,11 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 	 */
 	public function getClientId(){
 		return $this->randomClientId;
+	}
+	
+	//This can be spoofed by clients such as Horion.
+	public function getDeviceId(){
+		return $this->deviceId;
 	}
 
 	public function isBanned() : bool{
